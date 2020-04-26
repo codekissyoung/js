@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>JS 编辑器实现</title>
+    <script>
+
+        // 技术点
+        // textarea 文本域本身也只是支持一些字符的输入，并不支持显示html
+        // iframe 有一些关键的属性，它们可以做到让iframe可以被编辑作为内容编辑区域
+        // iframe 本身也是一个嵌套页面,支持 html的展示
+        // doc.body.innerHTML方法获取内容，这个内容是我们最终要插入到数据库或显示在页面上的（例如用户评论）
+
+        //初始化编辑器
+        function init()
+        {
+            let ifr = document.getElementById("editor");
+            let doc = ifr.contentDocument || ifr.contentWindow.document; // W3C || IE
+            // 分别设置designMode属性为 on，contentEditable属性为 true 让iframe可编辑
+            doc.designMode = "on";
+            doc.contentEditable = true;
+            doc.write(
+                "<html><head><style>" +
+                "body{ margin:3px; word-wrap:break-word; word-break: break-all; }" +
+                "</style></head><body>Good Ness Editor</body></html>"
+            );
+        }
+
+        //设置选定的文本为粗体/正常
+        function setBold()
+        {
+            let win = document.getElementById("editor").contentWindow;
+            win.document.execCommand("Bold", false, null);
+            win.focus();
+        }
+    </script>
+</head>
+<body>
+    <p>
+        <input type="button" id="bBtn" value="B" style="font-weight:bold" onclick="setBold();"/>
+    </p>
+    <p>
+        <iframe id="editor" width="600px" height="400px" style="border:solid 1px;"></iframe>
+    </p>
+</body>
+<script>
+    init();
+</script>
+</html>

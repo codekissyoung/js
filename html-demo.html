@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML DEMO</title>
+    <style>
+        /* 在 .container 高度确定的情况下使用 */
+        .container {
+            height: 200px;
+            background: #ccc;
+            display: table-cell; /*IE8以上及Chrome、Firefox*/
+            vertical-align: middle; /*IE8以上及Chrome、Firefox*/
+        }
+        .sp-span{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <p>实现垂直居中</p>
+            <p>实现垂直居中</p>
+            <p>实现垂直居中</p>
+        </div>
+    </div>
+
+    <hr>
+
+    <h2>链接</h2>
+    <a href="http://www.runoob.com">普通链接</a>
+    <a href="http://www.runoob.com/" target="_blank">新窗口打开的链接</a>
+    <a href="http://www.runoob.com/" target="_top">可以跳出iframe的链接</a>
+    本页面锚点链接<a href="#show-table">跳到表单</a>
+    图片链接<a href="http://www.runoob.com/html/html-tutorial.html"><img src="img/ace.jpg" alt="HTML 教程" width="32" height="32"></a>
+
+    <hr>
+    <h2>文本</h2>
+    <p>这个<br>段落<br>演示了“段内分行”的效果</p>
+    span 标签是没有语义的，它的作用就是为了给文字设置<span class="sp-span">单独的样式</span>用的<br>
+    strong 用于修饰<strong>强调</strong>的文本 ，比如打折后的价格<br>
+    address 地址标签：<address>北京市西城区德外大街10号</address>
+    <address> 本文的作者：<a href="mailto:1162097842@qq.com">给我发送邮件</a></address>
+    <p>预设样式: <del>删除线</del> <ins>下划线</ins> <b>加粗文本</b> <i>斜体文本</i> <sub>下标</sub> 和 <sup> 上标</sup> </p>
+    <pre>
+    此例演示如何使用 pre 标签
+    对空行和    空格
+    进行控制
+    var message="欢迎";
+    for(var i=1;i<=10;i++)
+    {
+        alert(message);
+    }
+    </pre>
+
+    输出代码：<br>
+    <code>
+        console.log("hello world");
+    </code>
+
+    <blockquote>
+        长引用测试长引用测试长引用测试长引用测试长引用测试长引用测试长引用测试长引用测试长引用测试长引用测试长引用测试长引用测试
+    </blockquote>
+
+    <ul>
+        <li>精彩少年</li>
+        <li>美丽突然出现</li>
+        <li>触动心灵的旋律</li>
+    </ul>
+    <ol>
+        <li>前端开发面试心法 </li>
+        <li>零基础学习html</li>
+        <li>JavaScript全攻略</li>
+    </ol>
+    <dl>
+        <dt>名词定义</dt>
+        <dd>名词说明说明名词说明说明名词说明说明名词说明说明名词说明说明</dd>
+        <dd>名词说明说明名词说明说明名词说明说明名词说明说明名词说明说明</dd>
+    </dl>
+<hr>
+    <h2 id="show-table">表格</h2>
+    <table summary="表格简介文本">
+        <caption>3年级成绩表</caption>
+        <thead>
+            <tr>
+                <th>班级</th>
+                <th>学生数</th>
+                <th>平均成绩</th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>一班</td>
+            <td>30</td>
+            <td>89</td>
+        </tr>
+        <tr>
+            <td>二班</td>
+            <td>35</td>
+            <td>85</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <hr>
+    <h2>表单</h2>
+    <fieldset>
+        <legend>用户信息收集</legend>
+        <form method="post"   action="a.php" enctype='multipart/form-data'>
+            <label for="username">用户名:</label><input type="text"  name="username" id="username" value="" /><br>
+            <label for="pass">密码:</label><input type="password"  name="pass" id="pass" value="" required/><br>
+            <label for="email">邮箱:</label> <input type="email" id="email" placeholder="Enter email"/><br>
+            <label for="male">男</label><input type="radio" name="gender" id="male" checked/>
+            <label for="female">女</label><input type="radio" name="gender" id="female" /><br>
+
+            <!-- name 属性作为键名，value 是值,checkbox 传给服务器的是一name为名的数组(在php中) -->
+            <input type=checkbox name=vehicle[] value=Bike id=bike><lable for=bike> 自行车 </lable>
+            <input type=checkbox name=vehicle[] value=Car id=car checked><lable for=car> 汽车 </lable>
+            <input type=checkbox name=vehicle[] value=air id=plane> <lable for=plane> 飞机 </lable>
+
+            <br>
+            <span> 下拉单选　</span>
+            <select name="hobby">
+                <option value="看书" selected>看书</option>
+                <option value="旅游">旅游</option>
+                <option value="运动">运动</option>
+                <option value="购物">购物</option>
+            </select>
+
+            <br>
+            <textarea  rows="5" cols="100">默认文本默认文本...</textarea>
+            <br>
+            <input type="submit" value="确定"  name="submit" />
+            <input type="reset" value="重置" name="reset" />
+        </form>
+    </fieldset>
+
+    <hr>
+    <h2 id="show-picture">图片</h2>
+    普通图片：<img src="img/ace.jpg" width="100" height="100">
+
+    <br>
+
+
+    <div class="brand">背景图：背景图：背景图：背景图：背景图：背景图：</div>
+    <style>
+        .brand {
+            width: 800px;
+            height: 200px;
+            background-image: url(/img/ace.jpg);
+            background-repeat: no-repeat;
+        }
+    </style>
+
+    <br>
+
+
+</body>
+</html>
